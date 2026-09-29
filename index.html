@@ -1,0 +1,883 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>The Citizen Model Academy | TCMA</title>
+
+    <meta
+        name="description"
+        content="The Citizen Model Academy - Professional school website and student portal."
+    >
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+ 
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body> 
+<div class="top-bar">
+    <div class="container top-bar-content">
+
+        <div>
+            <i class="fa-solid fa-school"></i>
+            The Citizen Model Academy
+        </div>
+
+        <div class="top-links">
+
+            <!-- STUDENT PORTAL -->
+            <a  href="./student.html">
+                <i class="fa-solid fa-user-graduate"></i>
+                Student Portal
+            </a>
+
+            <!-- ADMIN -->
+            <a href="./admin.html">
+                <i class="fa-solid fa-user-shield"></i>
+                Admin
+            </a>
+
+        </div>
+    </div>
+</div>
+
+ 
+
+<header class="header">
+
+    <div class="container nav-container">
+
+        <!-- BRAND -->
+        <a href="./index.html" class="brand">
+
+            <img
+                src="https://i.ibb.co/mCLD2w4y/2.png"
+                alt="TCMA Logo"
+            >
+
+            <div>
+                <h1>The Citizen Model Academy</h1>
+                <span>TCMA</span>
+            </div>
+
+        </a>
+
+ 
+        <button
+            class="menu-btn"
+            type="button"
+            onclick="toggleMenu()"
+            aria-label="Open Menu"
+        >
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+ 
+        <nav class="nav" id="mainNav">
+
+            <a href="#home">Home</a>
+
+            <a href="#about">About</a>
+
+            <a href="#academics">Academics</a>
+
+            <a href="#classes">Classes</a>
+
+            <a href="#campuses">Campuses</a>
+
+            <a href="#gallery">Gallery</a>
+
+            <a href="#contact">Contact</a>
+
+
+            <a
+                href="./student.html"
+                class="nav-portal"
+            >
+                <i class="fa-solid fa-user-graduate"></i>
+                Student Portal
+            </a>
+
+
+             <a
+                href="./admin.html"
+                class="nav-admin"
+            >
+                <i class="fa-solid fa-lock"></i>
+                Admin
+            </a>
+
+        </nav>
+
+    </div>
+
+</header>
+
+ 
+<section class="hero" id="home">
+
+    <div class="hero-overlay"></div>
+
+    <div class="container hero-content">
+
+        <span class="hero-small">
+            WELCOME TO TCMA
+        </span>
+
+        <h2>
+            The Citizen Model Academy
+        </h2>
+
+        <p>
+            Concept-based learning, professional faculty and
+            quality education for a brighter future.
+        </p>
+
+        <div class="hero-buttons">
+
+            
+            <a
+                href="./student.html"
+                class="btn btn-primary"
+            >
+                <i class="fa-solid fa-user-graduate"></i>
+                Student Portal
+            </a>
+
+            <a
+                href="#classes"
+                class="btn btn-light"
+            >
+                Explore Classes
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+ 
+
+<section class="stats-section">
+
+    <div class="container stats-grid">
+
+        <div class="stat-box">
+            <i class="fa-solid fa-layer-group"></i>
+            <strong>13</strong>
+            <span>Class Levels</span>
+        </div>
+
+        <div class="stat-box">
+            <i class="fa-solid fa-building-columns"></i>
+            <strong>5</strong>
+            <span>Campuses</span>
+        </div>
+
+        <div class="stat-box">
+            <i class="fa-solid fa-chalkboard-user"></i>
+            <strong>Professional</strong>
+            <span>Faculty</span>
+        </div>
+
+        <div class="stat-box">
+            <i class="fa-solid fa-book-open"></i>
+            <strong>Concept</strong>
+            <span>Based Learning</span>
+        </div>
+
+    </div>
+
+</section>
+ 
+<section class="section" id="about">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <span>ABOUT TCMA</span>
+
+            <h2>
+                Education With Concepts
+            </h2>
+
+            <p>
+                Building knowledge, confidence and character
+                through quality education.
+            </p>
+
+        </div>
+
+
+        <div class="about-grid">
+
+            <div class="about-image">
+
+                <img
+                    src="https://i.ibb.co/mCLD2w4y/2.png"
+                    alt="The Citizen Model Academy"
+                >
+
+            </div>
+
+
+            <div class="about-content">
+
+                <h3>
+                    The Citizen Model Academy
+                </h3>
+
+                <p>
+                    The Citizen Model Academy is committed to
+                    providing quality education through
+                    concept-based learning and professional teaching.
+                </p>
+
+                <p>
+                    Nouman Farooq has been associated with teaching
+                    since 2012. TCMA focuses on helping students
+                    understand concepts instead of relying only
+                    on memorization.
+                </p>
+
+
+                <div class="feature-list">
+
+                    <div>
+                        <i class="fa-solid fa-circle-check"></i>
+                        Professional Faculty
+                    </div>
+
+                    <div>
+                        <i class="fa-solid fa-circle-check"></i>
+                        Concept-Based Learning
+                    </div>
+
+                    <div>
+                        <i class="fa-solid fa-circle-check"></i>
+                        Recorded &amp; Conceptual Videos
+                    </div>
+
+                    <div>
+                        <i class="fa-solid fa-circle-check"></i>
+                        Student Support
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="section section-light" id="academics">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <span>ACADEMICS</span>
+
+            <h2>
+                Learning At TCMA
+            </h2>
+
+            <p>
+                A structured academic environment designed
+                around student understanding.
+            </p>
+
+        </div>
+
+
+        <div class="info-grid">
+
+            <div class="info-card">
+
+                <i class="fa-solid fa-lightbulb"></i>
+
+                <h3>
+                    Concept Learning
+                </h3>
+
+                <p>
+                    Students are encouraged to understand
+                    the concepts behind every topic.
+                </p>
+
+            </div>
+
+
+            <div class="info-card">
+
+                <i class="fa-solid fa-video"></i>
+
+                <h3>
+                    Recorded Classes
+                </h3>
+
+                <p>
+                    Recorded and conceptual learning material
+                    supports students beyond classroom hours.
+                </p>
+
+            </div>
+
+
+            <div class="info-card">
+
+                <i class="fa-solid fa-users"></i>
+
+                <h3>
+                    Professional Faculty
+                </h3>
+
+                <p>
+                    Experienced teachers guide students
+                    through their academic journey.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="section tcma-classes-section" id="classes">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <span>CLASSES AVAILABLE</span>
+
+            <h2>
+                Our Classes
+            </h2>
+
+            <p>
+                TCMA offers structured classes from early childhood
+                education to Class 10.
+            </p>
+
+        </div>
+
+
+        <div class="classes-available-box">
+
+            <div class="classes-box-header">
+
+                <div class="classes-icon">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                </div>
+
+                <div>
+                    <h3>Available Classes</h3>
+
+                    <p>
+                        Explore the academic levels available
+                        at The Citizen Model Academy.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="classes-grid">
+ 
+                <div class="class-card">
+                    <i class="fa-solid fa-puzzle-piece"></i>
+                    <span>Play Group</span>
+                    <small>Available</small>
+                </div>
+
+
+                <div class="class-card">
+                    <i class="fa-solid fa-child"></i>
+                    <span>ECED I</span>
+                    <small>Available</small>
+                </div>
+
+
+                <!-- ECED II -->
+                <div class="class-card">
+                    <i class="fa-solid fa-child-reaching"></i>
+                    <span>ECED II</span>
+                    <small>Available</small>
+                </div>
+
+ 
+                <div class="class-card">
+                    <i class="fa-solid fa-1"></i>
+                    <span>Class 1</span>
+                    <small>Available</small>
+                </div>
+
+
+                 <div class="class-card">
+                    <i class="fa-solid fa-2"></i>
+                    <span>Class 2</span>
+                    <small>Available</small>
+                </div>
+
+
+                 <div class="class-card">
+                    <i class="fa-solid fa-3"></i>
+                    <span>Class 3</span>
+                    <small>Available</small>
+                </div>
+
+ 
+                <div class="class-card">
+                    <i class="fa-solid fa-4"></i>
+                    <span>Class 4</span>
+                    <small>Available</small>
+                </div>
+
+ 
+                <div class="class-card">
+                    <i class="fa-solid fa-5"></i>
+                    <span>Class 5</span>
+                    <small>Available</small>
+                </div>
+
+ 
+                <div class="class-card">
+                    <i class="fa-solid fa-6"></i>
+                    <span>Class 6</span>
+                    <small>Available</small>
+                </div>
+ 
+                <div class="class-card">
+                    <i class="fa-solid fa-7"></i>
+                    <span>Class 7</span>
+                    <small>Available</small>
+                </div>
+
+ 
+                <div class="class-card">
+                    <i class="fa-solid fa-8"></i>
+                    <span>Class 8</span>
+                    <small>Available</small>
+                </div>
+
+
+                
+                <div class="class-card">
+                    <i class="fa-solid fa-9"></i>
+                    <span>Class 9</span>
+                    <small>Available</small>
+                </div>
+ 
+              <div class="class-card">
+
+                 <div class="class-number">
+                        10
+                   </div>
+
+    <span>Class 10</span>
+
+    <small>Available</small>
+
+</div>
+ 
+            </div>
+
+
+            <div class="classes-box-footer">
+
+                <i class="fa-solid fa-circle-check"></i>
+
+                <span>
+                    All listed classes are available at TCMA.
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+ 
+  
+
+<section class="section section-light" id="campuses">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <span>OUR CAMPUSES</span>
+
+            <h2>
+                TCMA Campuses
+            </h2>
+
+        </div>
+
+
+        <div class="campus-grid">
+
+            <div class="campus-card">
+
+                <div class="campus-number">
+                    01
+                </div>
+
+                <h3>
+                    Kharadar Primary
+                </h3>
+
+                <p>
+                    Near Allah Rakha Park / Raiti Wali Gali
+                </p>
+
+            </div>
+
+
+            <div class="campus-card">
+
+                <div class="campus-number">
+                    02
+                </div>
+
+                <h3>
+                    Police Chowki
+                </h3>
+
+                <p>
+                    Near Shakeel Burger / The Muscle Bar Gym
+                </p>
+
+            </div>
+
+
+            <div class="campus-card">
+
+                <div class="campus-number">
+                    03
+                </div>
+
+                <h3>
+                    Moosalane
+                </h3>
+
+                <p>
+                    Near Kausar Masjid
+                </p>
+
+            </div>
+
+
+            <div class="campus-card">
+
+                <div class="campus-number">
+                    04
+                </div>
+
+                <h3>
+                    Punjabi Club
+                </h3>
+
+                <p>
+                    TCMA Campus
+                </p>
+
+            </div>
+
+
+            <div class="campus-card">
+
+                <div class="campus-number">
+                    05
+                </div>
+
+                <h3>
+                    Kharadar Secondary
+                </h3>
+
+                <p>
+                    TCMA Secondary Campus
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="map-button-wrap">
+
+            <a
+                href="https://maps.app.goo.gl/LguzwfGUgHxdowiY6"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn-map"
+            >
+                <i class="fa-solid fa-location-dot"></i>
+                View Location on Google Maps
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+ 
+ 
+<section class="section" id="gallery">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <span>GALLERY</span>
+
+            <h2>TCMA Gallery</h2>
+
+            <p>
+                Moments from The Citizen Model Academy.
+            </p>
+
+        </div>
+
+        <div class="tcma-gallery-slider">
+ 
+            <button
+                type="button"
+                class="gallery-arrow gallery-prev"
+                onclick="previousGalleryImage()"
+                aria-label="Previous Image"
+            >
+                <i class="fa-solid fa-chevron-left"></i>
+            </button>
+ 
+            <div class="gallery-main-image">
+
+                <img
+                    id="tcmaGalleryImage"
+                    src="https://i.ibb.co/mCLD2w4y/2.png"
+                    alt="TCMA Gallery"
+                    onclick="openGalleryImage(this.src)"
+                >
+
+            </div>
+
+ 
+            <button
+                type="button"
+                class="gallery-arrow gallery-next"
+                onclick="nextGalleryImage()"
+                aria-label="Next Image"
+            >
+                <i class="fa-solid fa-chevron-right"></i>
+            </button>
+
+        </div>
+
+ 
+        <div class="gallery-counter">
+            <span id="galleryCurrentNumber">1</span>
+            /
+            <span id="galleryTotalNumber">31</span>
+        </div>
+
+    </div>
+
+</section>
+ 
+
+ <section class="section section-dark" id="contact">
+
+    <div class="container">
+
+        <div class="section-heading light">
+
+            <span>CONTACT</span>
+
+            <h2>
+                Contact TCMA
+            </h2>
+
+        </div>
+
+
+        <div class="contact-grid">
+
+            <div class="contact-card">
+
+                <i class="fa-solid fa-school"></i>
+
+                <h3>
+                    School
+                </h3>
+
+                <p>
+                    The Citizen Model Academy
+                </p>
+
+            </div>
+
+
+            <div class="contact-card">
+
+                <i class="fa-solid fa-location-dot"></i>
+
+                <h3>
+                    Location
+                </h3>
+
+                <p>
+                    Kharadar, Karachi
+                </p>
+
+            </div>
+
+ 
+            <div class="contact-card">
+
+                <i class="fa-solid fa-user-graduate"></i>
+
+                <h3>
+                    Student Portal
+                </h3>
+
+                <a href="./student.html">
+                    Open Student Portal
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+ 
+
+<footer class="footer">
+
+    <div class="container footer-content">
+
+        <div>
+
+            <h3>
+                The Citizen Model Academy
+            </h3>
+
+            <p>
+                Quality education through concept-based learning.
+            </p>
+
+        </div>
+
+
+        <div class="footer-links">
+
+            <a href="./index.html">
+                Home
+            </a>
+
+            <a href="./student.html">
+                Student Portal
+            </a>
+
+            <a href="./admin.html">
+                Admin
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="copyright">
+
+        ©
+        <span id="currentYear"></span>
+        The Citizen Model Academy.
+        All Rights Reserved.
+
+    </div>
+
+</footer>
+
+ 
+
+<div
+    class="modal-overlay"
+    id="classUpdatesModal"
+>
+
+    <div class="modal-box large-modal">
+
+        <button
+            class="modal-close"
+            type="button"
+            onclick="closeModal('classUpdatesModal')"
+            aria-label="Close"
+        >
+            &times;
+        </button>
+
+        <div id="classUpdatesContent"></div>
+
+    </div>
+
+</div>
+
+ 
+
+<div
+    class="gallery-modal"
+    id="galleryModal"
+>
+
+    <button
+        type="button"
+        onclick="closeGalleryImage()"
+        class="gallery-close"
+        aria-label="Close Gallery"
+    >
+        &times;
+    </button>
+
+    <img
+        id="galleryLargeImage"
+        src=""
+        alt="Gallery Preview"
+    >
+
+</div>
+
+ 
+
+<script src="script.js"></script>
+
+</body>
+</html> 

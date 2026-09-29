@@ -1,0 +1,966 @@
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student Portal | TCMA</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <link rel="stylesheet" href="style.css">
+ 
+
+</head>
+
+<body class="portal-page">
+
+ 
+
+<header class="header">
+
+    <div class="container nav-container">
+
+        <a href="index.html" class="brand">
+
+            <img
+                src="https://i.ibb.co/mCLD2w4y/2.png"
+                alt="TCMA Logo"
+            >
+
+            <div>
+                <h1>The Citizen Model Academy</h1>
+                <span>Student Portal</span>
+            </div>
+
+        </a>
+
+        <button class="menu-btn" onclick="toggleMenu()">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <nav class="nav" id="mainNav">
+
+            <a href="index.html">
+                <i class="fa-solid fa-house"></i>
+                Home
+            </a>
+
+            <a href="#studentProfile" class="tcma-service-nav" data-service-target="studentProfile">
+                Profile
+            </a>
+
+            <a href="#admission" class="tcma-service-nav" data-service-target="admission">
+                Admission
+            </a>
+
+            <a href="#diary" class="tcma-service-nav" data-service-target="diary">
+                Diary
+            </a>
+
+            <a href="#timetable" class="tcma-service-nav" data-service-target="timetable">
+                Timetable
+            </a>
+
+            <a href="#notices" class="tcma-service-nav" data-service-target="notices">
+                Notices
+            </a>
+
+            <a href="admin.html" class="nav-admin">
+                Admin
+            </a>
+
+        </nav>
+
+    </div>
+
+</header>
+
+ 
+
+<section class="portal-hero">
+
+    <div class="container">
+
+        <span>TCMA</span>
+
+        <h2>Student Portal</h2>
+
+        <p>
+            Manage your admission, ID card, diary, class updates,
+            timetable and notices in one place.
+        </p>
+
+    </div>
+
+</section>
+ 
+
+<section class="section section-light" id="studentVerificationGate">
+    <div class="container">
+
+        <div class="tcma-verification-box">
+
+            <div class="tcma-verification-icon">
+                <i class="fa-solid fa-user-shield"></i>
+            </div>
+
+            <div class="section-heading">
+                <span>STUDENT VERIFICATION</span>
+                <h2>Verify Before Entering Student Panel</h2>
+                <p>
+                    Enter the registered Student Name and Father Name.
+                    Your student record must already exist before the
+                    Student Panel can be opened.
+                </p>
+            </div>
+
+            <form id="tcmaVerificationForm" class="tcma-verification-form portal-form">
+
+                <div class="form-grid">
+
+                    <div class="form-group">
+                        <label for="tcmaVerifyStudentName">
+                            Student Name *
+                        </label>
+
+                        <input
+                            type="text"
+                            id="tcmaVerifyStudentName"
+                            required
+                            autocomplete="name"
+                            placeholder="Enter student name"
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="tcmaVerifyFatherName">
+                            Father Name *
+                        </label>
+
+                        <input
+                            type="text"
+                            id="tcmaVerifyFatherName"
+                            required
+                            autocomplete="off"
+                            placeholder="Enter father name"
+                        >
+                    </div>
+
+                </div>
+
+                <button
+                    type="submit"
+                    class="btn btn-primary full-button"
+                >
+                    <i class="fa-solid fa-user-check"></i>
+                    Verify Student
+                </button>
+
+            </form>
+
+            <div id="tcmaVerificationMessage"
+                 class="tcma-verification-message"></div>
+
+            <div class="tcma-lock-note">
+                <i class="fa-solid fa-lock"></i>
+                Student services stay locked until verification is successful.
+            </div>
+
+        </div>
+
+    </div>
+</section>
+ 
+
+<section class="section portal-menu-section tcma-portal-dashboard tcma-portal-hidden">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <span>STUDENT SERVICES</span>
+
+            <h2>Choose A Service</h2>
+
+        </div>
+
+
+        <div class="portal-menu-grid">
+
+            <a href="#admission" class="portal-menu-card tcma-service-card" data-service-target="admission">
+
+                <i class="fa-solid fa-file-signature"></i>
+
+                <h3>Admission</h3>
+
+                <p>Submit your admission form.</p>
+
+            </a>
+
+
+            <a href="#findID" class="portal-menu-card tcma-service-card" data-service-target="findID">
+
+                <i class="fa-solid fa-id-card"></i>
+
+                <h3>Find ID Card</h3>
+
+                <p>Find your student ID card.</p>
+
+            </a>
+
+
+            <a href="#studentProfile" class="portal-menu-card tcma-service-card" data-service-target="studentProfile">
+
+                <i class="fa-solid fa-user"></i>
+
+                <h3>Student Profile</h3>
+
+                <p>View your student information.</p>
+
+            </a>
+
+
+            <a href="#diary" class="portal-menu-card tcma-service-card" data-service-target="diary">
+
+                <i class="fa-solid fa-book"></i>
+
+                <h3>Daily Diary</h3>
+
+                <p>View your class diary.</p>
+
+            </a>
+
+
+            <a href="#classes" class="portal-menu-card tcma-service-card" data-service-target="classes">
+
+                <i class="fa-solid fa-chalkboard"></i>
+
+                <h3>Classes</h3>
+
+                <p>View class updates.</p>
+
+            </a>
+
+
+            <a href="#timetable" class="portal-menu-card tcma-service-card" data-service-target="timetable">
+
+                <i class="fa-solid fa-calendar-days"></i>
+
+                <h3>Timetable</h3>
+
+                <p>View your timetable.</p>
+
+            </a>
+
+
+            <a href="#notices" class="portal-menu-card tcma-service-card" data-service-target="notices">
+
+                <i class="fa-solid fa-bullhorn"></i>
+
+                <h3>Notices</h3>
+
+                <p>View important notices.</p>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<div class="container tcma-portal-hidden" id="tcmaPortalStatus">
+    <div class="diary-card">
+        <strong>
+            <i class="fa-solid fa-circle-check"></i>
+            Student Verified
+        </strong>
+        <span id="tcmaVerifiedStudentName"></span>
+    </div>
+</div> 
+
+<section class="section section-light tcma-service-section" id="admission">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <span>ADMISSION</span>
+
+            <h2>Student Admission Form</h2>
+
+            <p>
+                Complete the form to register your admission information.
+            </p>
+
+        </div>
+
+
+        <form id="admissionForm" class="portal-form">
+
+            <div class="form-grid">
+
+                <div class="form-group">
+                    <label>Student Name *</label>
+                    <input
+                        type="text"
+                        id="studentName"
+                        required
+                        placeholder="Enter student name"
+                    >
+                </div>
+
+
+                <div class="form-group">
+                    <label>Father Name *</label>
+                    <input
+                        type="text"
+                        id="fatherName"
+                        required
+                        placeholder="Enter father name"
+                    >
+                </div>
+
+
+                <div class="form-group">
+                    <label>Gender *</label>
+
+                    <select id="gender" required>
+                        <option value="">Select Gender</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>Class *</label>
+
+                    <select id="studentClass" required>
+
+                        <option value="">Select Class</option>
+
+                        <option>Play Group</option>
+                        <option>ECED I</option>
+                        <option>ECED II</option>
+                        <option>Class 1</option>
+                        <option>Class 2</option>
+                        <option>Class 3</option>
+                        <option>Class 4</option>
+                        <option>Class 5</option>
+                        <option>Class 6</option>
+                        <option>Class 7</option>
+                        <option>Class 8</option>
+                        <option>Class 9</option>
+                        <option>Class 10</option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>Section</label>
+
+                    <input
+                        type="text"
+                        id="studentSection"
+                        placeholder="Example: A"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>Apply For *</label>
+
+                    <select id="applyFor" required>
+
+                        <option value="">Select</option>
+
+                        <option value="TCMA School">
+                            TCMA School
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>Campus *</label>
+
+                    <select id="campus" required>
+
+                        <option value="">
+                            Select Campus
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>Phone *</label>
+
+                    <input
+                        type="tel"
+                        id="phone"
+                        required
+                        placeholder="03XXXXXXXXX"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>Student Photo</label>
+
+                    <input
+                        type="file"
+                        id="studentPhoto"
+                        accept="image/*"
+                    >
+
+                </div>
+
+
+                <div class="form-group full-width">
+
+                    <label>Message</label>
+
+                    <textarea
+                        id="message"
+                        rows="4"
+                        placeholder="Additional information..."
+                    ></textarea>
+
+                </div>
+
+            </div>
+
+
+            <button type="submit" class="btn btn-primary">
+
+                <i class="fa-solid fa-paper-plane"></i>
+
+                Submit Admission
+
+            </button>
+
+
+            <div
+                id="successMessage"
+                class="success-message"
+            ></div>
+
+        </form>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     FIND ID CARD
+========================================================= -->
+
+<section class="section tcma-service-section" id="findID">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <span>STUDENT ID</span>
+
+            <h2>Find Your Student ID Card</h2>
+
+            <p>
+                Enter your details to find your registered student ID.
+            </p>
+
+        </div>
+
+
+        <form id="studentLoginForm" class="search-form">
+
+            <div class="form-group">
+
+                <label>Student Name</label>
+
+                <input
+                    type="text"
+                    id="loginStudentName"
+                    required
+                    placeholder="Student name"
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>Father Name</label>
+
+                <input
+                    type="text"
+                    id="loginFatherName"
+                    required
+                    placeholder="Father name"
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>Phone</label>
+
+                <input
+                    type="tel"
+                    id="loginPhone"
+                    required
+                    placeholder="03XXXXXXXXX"
+                >
+
+            </div>
+
+
+            <button type="submit" class="btn btn-primary">
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+                Find ID Card
+
+            </button>
+
+        </form>
+
+
+        <div id="studentLoginResult"></div>
+
+    </div>
+
+</section>
+
+ 
+
+<section class="section section-light tcma-service-section" id="studentProfile">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <span>PROFILE</span>
+
+            <h2>Student Profile</h2>
+
+        </div>
+
+
+        <div class="profile-search-card">
+
+            <p>
+                Find your student record above first. Your profile
+                information will then be available here.
+            </p>
+
+            <a href="#findID" class="btn btn-outline">
+                Find My Profile
+            </a>
+
+        </div>
+
+
+        <div id="studentProfileContent"></div>
+
+    </div>
+
+</section>
+
+ 
+<section class="section tcma-service-section" id="classes">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <span>CLASSES</span>
+
+            <h2>Class Updates</h2>
+
+            <p>
+                Select your class and verify your student information.
+            </p>
+
+        </div>
+
+
+        <div class="classes-grid">
+
+            <button onclick="openClassUpdates('Play Group')" class="class-card">
+                <i class="fa-solid fa-puzzle-piece"></i>
+                <span>Play Group</span>
+            </button>
+
+            <button onclick="openClassUpdates('ECED I')" class="class-card">
+                <i class="fa-solid fa-child"></i>
+                <span>ECED I</span>
+            </button>
+
+            <button onclick="openClassUpdates('ECED II')" class="class-card">
+                <i class="fa-solid fa-child-reaching"></i>
+                <span>ECED II</span>
+            </button>
+
+            <button onclick="openClassUpdates('Class 1')" class="class-card">
+                <span>Class 1</span>
+            </button>
+
+            <button onclick="openClassUpdates('Class 2')" class="class-card">
+                <span>Class 2</span>
+            </button>
+
+            <button onclick="openClassUpdates('Class 3')" class="class-card">
+                <span>Class 3</span>
+            </button>
+
+            <button onclick="openClassUpdates('Class 4')" class="class-card">
+                <span>Class 4</span>
+            </button>
+
+            <button onclick="openClassUpdates('Class 5')" class="class-card">
+                <span>Class 5</span>
+            </button>
+
+            <button onclick="openClassUpdates('Class 6')" class="class-card">
+                <span>Class 6</span>
+            </button>
+
+            <button onclick="openClassUpdates('Class 7')" class="class-card">
+                <span>Class 7</span>
+            </button>
+
+            <button onclick="openClassUpdates('Class 8')" class="class-card">
+                <span>Class 8</span>
+            </button>
+
+            <button onclick="openClassUpdates('Class 9')" class="class-card">
+                <span>Class 9</span>
+            </button>
+
+            <button onclick="openClassUpdates('Class 10')" class="class-card">
+                <span>Class 10</span>
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+ 
+<section class="section section-light tcma-service-section" id="diary">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <span>DAILY DIARY</span>
+
+            <h2>Student Diary</h2>
+
+            <p>
+                Search your diary by class and date.
+            </p>
+
+        </div>
+
+
+        <div class="diary-search-card">
+
+            <div class="form-group">
+
+                <label>Class</label>
+
+                <select id="studentDiaryClass">
+
+                    <option value="">
+                        Select Class
+                    </option>
+
+                    <option>Play Group</option>
+                    <option>ECED I</option>
+                    <option>ECED II</option>
+
+                    <option>Class 1</option>
+                    <option>Class 2</option>
+                    <option>Class 3</option>
+                    <option>Class 4</option>
+                    <option>Class 5</option>
+                    <option>Class 6</option>
+                    <option>Class 7</option>
+                    <option>Class 8</option>
+                    <option>Class 9</option>
+                    <option>Class 10</option>
+
+                </select>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>Date</label>
+
+                <input
+                    type="date"
+                    id="studentDiaryDate"
+                >
+
+            </div>
+
+
+            <button
+                class="btn btn-primary"
+                onclick="searchStudentDiary()"
+            >
+
+                <i class="fa-solid fa-search"></i>
+
+                Search Diary
+
+            </button>
+
+        </div>
+
+
+        <div id="studentDiaryResults"></div>
+
+    </div>
+
+</section>
+
+ 
+<section class="section tcma-service-section" id="timetable">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <span>TIME TABLE</span>
+
+            <h2>Class Timetable</h2>
+
+        </div>
+
+
+        <div class="table-wrapper">
+
+            <table class="data-table">
+
+                <thead>
+
+                    <tr>
+                        <th>Day</th>
+                        <th>Period 1</th>
+                        <th>Period 2</th>
+                        <th>Period 3</th>
+                        <th>Period 4</th>
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    <tr>
+                        <td>Monday</td>
+                        <td>English</td>
+                        <td>Math</td>
+                        <td>Science</td>
+                        <td>Urdu</td>
+                    </tr>
+
+                    <tr>
+                        <td>Tuesday</td>
+                        <td>Math</td>
+                        <td>English</td>
+                        <td>Computer</td>
+                        <td>Science</td>
+                    </tr>
+
+                    <tr>
+                        <td>Wednesday</td>
+                        <td>Urdu</td>
+                        <td>Math</td>
+                        <td>English</td>
+                        <td>Science</td>
+                    </tr>
+
+                    <tr>
+                        <td>Thursday</td>
+                        <td>Science</td>
+                        <td>English</td>
+                        <td>Math</td>
+                        <td>Computer</td>
+                    </tr>
+
+                    <tr>
+                        <td>Friday</td>
+                        <td>English</td>
+                        <td>Math</td>
+                        <td>Urdu</td>
+                        <td>Activities</td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</section>
+ 
+
+<section class="section section-light tcma-service-section" id="notices">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <span>NOTICES</span>
+
+            <h2>Important Notices</h2>
+
+        </div>
+
+
+        <div id="studentNotices" class="notice-list">
+
+            <div class="empty-state">
+                <i class="fa-solid fa-bullhorn"></i>
+                <p>No notices available.</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+ 
+
+<div class="modal-overlay" id="idModal">
+
+    <div class="modal-box">
+
+        <button
+            class="modal-close"
+            onclick="closeModal('idModal')"
+        >
+            &times;
+        </button>
+
+        <div id="idCard"></div>
+
+        <div class="modal-actions">
+
+            <button
+                class="btn btn-primary"
+                onclick="downloadID()"
+            >
+                <i class="fa-solid fa-download"></i>
+                Download
+            </button>
+
+            <button
+                class="btn btn-outline"
+                onclick="shareID()"
+            >
+                <i class="fa-solid fa-share-nodes"></i>
+                Share
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+ 
+
+<div class="modal-overlay" id="classUpdatesModal">
+
+    <div class="modal-box large-modal">
+
+        <button
+            class="modal-close"
+            onclick="closeModal('classUpdatesModal')"
+        >
+            &times;
+        </button>
+
+        <div id="classUpdatesContent"></div>
+
+    </div>
+
+</div>
+
+
+<footer class="footer">
+
+    <div class="container footer-content">
+
+        <div>
+            <h3>The Citizen Model Academy</h3>
+            <p>Student Portal</p>
+        </div>
+
+        <div class="footer-links">
+
+            <a href="index.html">Home</a>
+            <a href="admin.html">Admin</a>
+
+        </div>
+
+    </div>
+
+    <div class="copyright">
+        © <span id="currentYear"></span> The Citizen Model Academy.
+    </div>
+
+</footer>
+
+
+<script src="script.js"></script>
+ 
+
+
+
+   
+</body>
+</html>
