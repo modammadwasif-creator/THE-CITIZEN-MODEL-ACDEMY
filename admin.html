@@ -1,0 +1,685 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Admin Panel | TCMA</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+        <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body class="admin-page">
+ 
+
+<header class="admin-header">
+
+    <div class="container admin-header-inner">
+
+        <a href="index.html" class="admin-brand">
+
+            <img
+                src="https://i.ibb.co/mCLD2w4y/2.png"
+                alt="TCMA Logo"
+            >
+
+            <div>
+                <strong>TCMA</strong>
+                <span>Admin Panel</span>
+            </div>
+
+        </a>
+
+
+        <div class="admin-header-actions">
+
+            <a href="student.html" class="btn btn-small btn-outline-light">
+                Student Portal
+            </a>
+
+            <button
+                onclick="adminLogout()"
+                class="btn btn-small btn-danger"
+            >
+                <i class="fa-solid fa-right-from-bracket"></i>
+                Logout
+            </button>
+                <a href="./index.html" class="admin-home-btn">
+    <i class="fa-solid fa-house"></i>
+    Main School Website
+</a>
+        </div>
+
+    </div>
+
+</header>
+
+ 
+
+<section id="adminLoginSection" class="admin-login-section">
+
+    <div class="admin-login-box">
+
+        <div class="admin-logo">
+
+            <img
+                src="https://i.ibb.co/mCLD2w4y/2.png"
+                alt="TCMA Logo"
+            >
+
+        </div>
+
+        <h1>TCMA Admin Login</h1>
+
+        <p>Authorized management access only.</p>
+
+
+        <div class="form-group">
+
+            <label>Admin Password</label>
+
+            <input
+                type="password"
+                id="adminPassword"
+                placeholder="Enter admin password"
+            >
+
+        </div>
+
+
+        <button
+            onclick="adminLogin()"
+            class="btn btn-primary full-button"
+        >
+
+            <i class="fa-solid fa-lock"></i>
+
+            Login
+
+        </button>
+
+
+        <div id="loginError" class="error-message"></div>
+
+        <p class="admin-demo-note">
+            Default password: <strong>TCMA-admin</strong>
+        </p>
+
+    </div>
+
+</section>
+
+ 
+
+<main id="adminDashboard" class="admin-dashboard hidden">
+
+    <div class="container">
+
+
+        <!-- DASHBOARD TITLE -->
+
+        <div class="admin-title">
+
+            <div>
+
+                <span>MANAGEMENT</span>
+
+                <h1>Admin Dashboard</h1>
+
+                <p>
+                    Manage students, class updates, diary and notices.
+                </p>
+
+            </div>
+
+        </div>
+
+ 
+
+        <div class="admin-stats">
+
+            <div class="admin-stat-card">
+
+                <i class="fa-solid fa-users"></i>
+
+                <div>
+
+                    <strong id="totalStudents">0</strong>
+
+                    <span>Total Students</span>
+
+                </div>
+
+            </div>
+
+
+            <div class="admin-stat-card">
+
+                <i class="fa-solid fa-graduation-cap"></i>
+
+                <div>
+
+                    <strong id="tcmaStudents">0</strong>
+
+                    <span>TCMA Students</span>
+
+                </div>
+
+            </div>
+
+
+            <div class="admin-stat-card">
+
+                <i class="fa-solid fa-book"></i>
+
+                <div>
+
+                    <strong id="totalDiaries">0</strong>
+
+                    <span>Diary Entries</span>
+
+                </div>
+
+            </div>
+
+
+            <div class="admin-stat-card">
+
+                <i class="fa-solid fa-bullhorn"></i>
+
+                <div>
+
+                    <strong id="totalUpdates">0</strong>
+
+                    <span>Class Updates</span>
+
+                </div>
+
+            </div>
+
+        </div> 
+
+        <section class="admin-section">
+
+            <div class="admin-section-title">
+
+                <div>
+                    <span>CLASS MANAGEMENT</span>
+                    <h2>Update Categories</h2>
+                </div>
+
+            </div>
+
+
+            <div class="category-grid">
+
+                <button
+                    class="category-box"
+                    onclick="openAdminCategory('announcements')"
+                >
+                    <i class="fa-solid fa-bullhorn"></i>
+                    <span>Announcements</span>
+                </button>
+
+
+                <button
+                    class="category-box"
+                    onclick="openAdminCategory('exams')"
+                >
+                    <i class="fa-solid fa-file-pen"></i>
+                    <span>Exams</span>
+                </button>
+
+
+                <button
+                    class="category-box"
+                    onclick="openAdminCategory('results')"
+                >
+                    <i class="fa-solid fa-square-poll-vertical"></i>
+                    <span>Results / Marks</span>
+                </button>
+
+
+                <button
+                    class="category-box"
+                    onclick="openAdminCategory('attendance')"
+                >
+                    <i class="fa-solid fa-calendar-check"></i>
+                    <span>Attendance</span>
+                </button>
+
+
+                <button
+                    class="category-box"
+                    onclick="openAdminCategory('achievements')"
+                >
+                    <i class="fa-solid fa-trophy"></i>
+                    <span>Achievements</span>
+                </button>
+
+
+                <button
+                    class="category-box"
+                    onclick="openAdminCategory('homework')"
+                >
+                    <i class="fa-solid fa-book-open"></i>
+                    <span>Homework / Diary</span>
+                </button>
+
+
+                <button
+                    class="category-box"
+                    onclick="openAdminCategory('remarks')"
+                >
+                    <i class="fa-solid fa-comment-dots"></i>
+                    <span>Teacher Remarks</span>
+                </button>
+
+
+                <button
+                    class="category-box"
+                    onclick="openAdminCategory('importantDates')"
+                >
+                    <i class="fa-solid fa-calendar-days"></i>
+                    <span>Important Dates</span>
+                </button>
+
+
+                <button
+                    class="category-box"
+                    onclick="openAdminCategory('notifications')"
+                >
+                    <i class="fa-solid fa-bell"></i>
+                    <span>Notifications</span>
+                </button>
+
+            </div>
+
+        </section>
+ 
+
+        <section
+            class="admin-section hidden"
+            id="categoryEditorSection"
+        >
+
+            <div class="admin-section-title">
+
+                <div>
+                    <span>DETAIL ENTRY</span>
+                    <h2 id="selectedCategoryTitle">
+                        Category
+                    </h2>
+                </div>
+
+                <button
+                    onclick="closeCategoryEditor()"
+                    class="btn btn-small btn-outline"
+                >
+                    Close
+                </button>
+
+            </div>
+
+
+            <form id="classUpdateForm" class="admin-form">
+
+                <input
+                    type="hidden"
+                    id="adminUpdateCategory"
+                >
+
+
+                <div class="form-grid">
+
+                    <div class="form-group">
+
+                        <label>Class *</label>
+
+                        <select
+                            id="adminClassSelect"
+                            required
+                        >
+
+                            <option value="">
+                                Select Class
+                            </option>
+
+                            <option>Play Group</option>
+                            <option>ECED I</option>
+                            <option>ECED II</option>
+
+                            <option>Class 1</option>
+                            <option>Class 2</option>
+                            <option>Class 3</option>
+                            <option>Class 4</option>
+                            <option>Class 5</option>
+                            <option>Class 6</option>
+                            <option>Class 7</option>
+                            <option>Class 8</option>
+                            <option>Class 9</option>
+                            <option>Class 10</option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>Date *</label>
+
+                        <input
+                            type="date"
+                            id="adminUpdateDate"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group full-width">
+
+                        <label>Subject / Title</label>
+
+                        <input
+                            type="text"
+                            id="adminUpdateSubject"
+                            placeholder="Enter subject or title"
+                        >
+
+                    </div>
+
+
+                    <div class="form-group full-width">
+
+                        <label>Details *</label>
+
+                        <textarea
+                            id="adminUpdateText"
+                            rows="7"
+                            required
+                            placeholder="Enter details..."
+                        ></textarea>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    onclick="saveClassUpdate()"
+                    class="btn btn-primary"
+                >
+
+                    <i class="fa-solid fa-paper-plane"></i>
+
+                    Save / Send Update
+
+                </button>
+
+
+                <div id="adminUpdateMessage"></div>
+
+            </form>
+
+        </section>
+
+ 
+
+        <section class="admin-section">
+
+            <div class="admin-section-title">
+
+                <div>
+
+                    <span>DIARY MANAGEMENT</span>
+
+                    <h2>Search Diary</h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="admin-search-card">
+
+                <div class="form-group">
+
+                    <label>Class</label>
+
+                    <select id="adminDiarySearchClass">
+
+                        <option value="">
+                            Select Class
+                        </option>
+
+                        <option>Play Group</option>
+                        <option>ECED I</option>
+                        <option>ECED II</option>
+
+                        <option>Class 1</option>
+                        <option>Class 2</option>
+                        <option>Class 3</option>
+                        <option>Class 4</option>
+                        <option>Class 5</option>
+                        <option>Class 6</option>
+                        <option>Class 7</option>
+                        <option>Class 8</option>
+                        <option>Class 9</option>
+                        <option>Class 10</option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>Date</label>
+
+                    <input
+                        type="date"
+                        id="adminDiarySearchDate"
+                    >
+
+                </div>
+
+
+                <button
+                    onclick="searchAdminDiary()"
+                    class="btn btn-primary"
+                >
+
+                    <i class="fa-solid fa-search"></i>
+
+                    Search Diary
+
+                </button>
+
+
+                <button
+                    onclick="showAllAdminDiaries()"
+                    class="btn btn-outline"
+                >
+
+                    Show All
+
+                </button>
+
+            </div>
+
+
+            <div id="adminDiaryResults"></div>
+
+        </section>
+ 
+
+        <section class="admin-section">
+
+            <div class="admin-section-title">
+
+                <div>
+
+                    <span>HISTORY</span>
+
+                    <h2>Saved Class Updates</h2>
+
+                </div>
+
+            </div>
+
+
+            <div id="adminSavedUpdates"></div>
+
+        </section>
+
+ 
+
+        <section class="admin-section">
+
+            <div class="admin-section-title">
+
+                <div>
+
+                    <span>STUDENT DATABASE</span>
+
+                    <h2>Search Students</h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="admin-search-card">
+
+                <div class="form-group">
+
+                    <label>Search</label>
+
+                    <input
+                        type="text"
+                        id="searchStudent"
+                        oninput="searchStudents()"
+                        placeholder="Name, father name, ID or phone"
+                    >
+
+                </div>
+
+
+                <button
+                    onclick="clearStudentSearch()"
+                    class="btn btn-outline"
+                >
+                    Clear Search
+                </button>
+
+            </div>
+
+
+            <div class="table-wrapper">
+
+                <table class="data-table">
+
+                    <thead>
+
+                        <tr>
+
+                            <th>ID</th>
+                            <th>Student</th>
+                            <th>Father</th>
+                            <th>Class</th>
+                            <th>Phone</th>
+                            <th>Campus</th>
+                            <th>Action</th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody id="studentTable">
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+
+            <button
+                onclick="clearAllStudents()"
+                class="btn btn-danger"
+            >
+
+                <i class="fa-solid fa-trash"></i>
+
+                Clear All Students
+
+            </button>
+
+        </section>
+
+    </div>
+
+</main>
+
+ 
+
+<div class="modal-overlay" id="idModal">
+
+    <div class="modal-box">
+
+        <button
+            class="modal-close"
+            onclick="closeModal('idModal')"
+        >
+            &times;
+        </button>
+
+        <div id="idCard"></div>
+
+        <div class="modal-actions">
+
+            <button
+                onclick="downloadID()"
+                class="btn btn-primary"
+            >
+                <i class="fa-solid fa-download"></i>
+                Download
+            </button>
+
+            <button
+                onclick="shareID()"
+                class="btn btn-outline"
+            >
+                <i class="fa-solid fa-share-nodes"></i>
+                Share
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
